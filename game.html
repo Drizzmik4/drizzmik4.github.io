@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avoid the Blocks</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #111;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #game {
+      position: relative;
+      margin: 20px auto;
+      width: 300px;
+      height: 500px;
+      background: #222;
+      overflow: hidden;
+      border: 3px solid #555;
+    }
+
+    #player {
+      width: 40px;
+      height: 40px;
+      background: #4caf50;
+      position: absolute;
+      bottom: 10px;
+      left: 130px;
+    }
+
+    .block {
+      width: 40px;
+      height: 40px;
+      background: crimson;
+      position: absolute;
+      top: 0;
+    }
+
+    #score, #highscore {
+      font-size: 1.2em;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+
+    
+
+a {
+            background-color: #1e1e1e;
+            color: #00ffcc;
+            text-decoration: none;
+            padding: 15px 25px;
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 255, 204, 0.2);
+        }
+
+
+        body {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    </style>
+  </style>
+</head>
+<body>
+    <a href="index.html">Home</a>
+    <a href="games.html">Back To Games</a>
+  
+
+
+
+
+    <canvas id="gameCanvas" width="400" height="600" style="border:1px solid #000;"></canvas>
+<button id="restartBtn" style="display:none; margin-top: 10px;">Restart</button>
+<script>
+  // Reset high score once
+  localStorage.removeItem("highScore");
+
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+  const restartBtn = document.getElementById("restartBtn");
+
+  const player = {
+    x: 175,
+    y: 550,
+    width: 50,
+    height: 50,
+    speed: 5
+  };
+
+  let blocks = [];
+  let blockSpeed = 3;
+  let score = 0;
+  let highScore = localStorage.getItem("highScore") || 0;
+  let keys = { left: false, right: false };
+  let isGameOver = false;
+  let frameCounter = 0;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") keys.left = true;
+    if (e.key === "ArrowRight") keys.right = true;
+  });
+
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "ArrowLeft") keys.left = false;
+    if (e.key === "ArrowRight") keys.right = false;
+  });
+
+  restartBtn.addEventListener("click", () => {
+    score = 0;
+    blocks = [];
+    player.x = 175;
+    isGameOver = false;
+    blockSpeed = 3;
+    frameCounter = 0;
+    restartBtn.style.display = "none";
+    gameLoop();
+  });
+
+  function spawnBlock() {
+    const blockWidth = 50;
+    const x = Math.random() * (canvas.width - blockWidth);
+    blocks.push({
+      x: x,
+      y: -50,
+      width: blockWidth,
+      height: 50,
+      speed: blockSpeed
+    });
+  }
+
+  function drawPlayer() {
+    ctx.fillStyle = "blue";
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+  }
+
+  function drawBlocks() {
+    ctx.fillStyle = "red";
+    for (let block of blocks) {
+      ctx.fillRect(block.x, block.y, block.width, block.height);
+    }
+  }
+
+  function update() {
+    if (keys.left) player.x -= player.speed;
+    if (keys.right) player.x += player.speed;
+
+    // Keep player in bounds
+    player.x = Math.max(0, Math.min(canvas.width - player.width, player.x));
+
+    for (let block of blocks) {
+      block.y += block.speed;
+    }
+
+    blocks = blocks.filter(block => {
+      if (
+        block.y + block.height > player.y &&
+        block.y < player.y + player.height &&
+        block.x + block.width > player.x &&
+        block.x < player.x + player.width
+      ) {
+        endGame();
+      }
+      return block.y < canvas.height;
+    });
+
+    frameCounter++;
+    if (frameCounter % 10 === 0) score++;
+
+    // Increase difficulty every 5 seconds
+    if (frameCounter % (60 * 5) === 0) {
+      blockSpeed += 2.5;
+    }
+  }
+
+  function drawScore() {
+    ctx.fillStyle = "black";
+    ctx.font = "16px Arial";
+    ctx.fillText("Score: " + score, 10, 20);
+    ctx.fillText("High Score: " + highScore, 10, 40);
+  }
+
+  function endGame() {
+    isGameOver = true;
+    if (score > highScore) {
+      highScore = score;
+      localStorage.setItem("highScore", highScore);
+    }
+    ctx.fillStyle = "rgba(0,0,0,0.5)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.font = "24px Arial";
+    ctx.fillText("Game Over!", 130, 250);
+    ctx.font = "16px Arial";
+    ctx.fillText("Score: " + score, 150, 280);
+    ctx.fillText("High Score: " + highScore, 130, 310);
+    restartBtn.style.display = "block";
+  }
+
+  function gameLoop() {
+    if (isGameOver) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    update();
+    drawPlayer();
+    drawBlocks();
+    drawScore();
+    requestAnimationFrame(gameLoop);
+  }
+
+  setInterval(() => {
+    if (!isGameOver) spawnBlock();
+  }, 1000);
+
+  gameLoop();
+</script>

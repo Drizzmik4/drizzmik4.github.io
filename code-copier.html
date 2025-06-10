@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Copy Tool</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1e1e1e;
+            color: #e0f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00ffcc;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: #ccc;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .code-block {
+            background-color: #121212;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 4px 20px rgba(0, 255, 204, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .code-block:hover {
+            transform: translateY(-3px);
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #1e1e1e;
+            color: #00ffcc;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #00ffcc;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: linear-gradient(145deg, #00ffcc, #00c9a7);
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #00c9a7, #00bfa5);
+            transform: scale(1.05);
+        }
+
+        .confirmation {
+            margin-top: 10px;
+            color: #80ffcc;
+            font-style: italic;
+            display: none;
+            transition: opacity 0.3s ease;
+        }
+
+        @media (max-width: 600px) {
+            textarea {
+                height: 150px;
+                font-size: 13px;
+            }
+
+            button {
+                padding: 8px 20px;
+                font-size: 15px;
+            }
+        }
+
+        a {
+            background-color: #1e1e1e;
+            color: #00ffcc;
+            text-decoration: none;
+            padding: 15px 25px;
+            border: 1px solid #00ffcc;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 255, 204, 0.2);
+        }
+        
+    </style>
+</head>
+<body>
+
+<body class="bg-white text-black dark:bg-[#1e1e1e] dark:text-white transition-colors duration-300">
+    <a href="index.html">Main page</a>
+    <br>
+
+    <h1>Blooket Hacks👿</h1>
+    <p>No.1 Daily rewards</p>
+    <p>No.2 Spam buy blooks</p>
+    <p>No.3 Any Blook</p>
+
+    <div class="code-block">
+        <textarea id="code1">
+            /**
+ * @license AGPL-3.0
+ * Blooket Cheats
+ * Copyright (C) 2023-present 05Konz
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Source: https://github.com/Blooket-Council/Blooket-Cheats 05konz994@gmail.com
+*/
+
+/* THE UPDATE CHECKER IS ADDED DURING COMMIT PREP, THERE MAY BE REDUNDANT CODE, DO NOT TOUCH */
+
+(() => {
+    let iframe = document.querySelector("iframe");
+    if (!iframe) {
+        iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        document.body.append(iframe);
+    }
+    /* By CryptoDude3 */
+    if (window.fetch.call.toString() == 'function call() { [native code] }') {
+        const call = window.fetch.call;
+        window.fetch.call = function () {
+            if (!arguments[1].includes("s.blooket.com/rc")) return call.apply(this, arguments);
+        }
+    }
+    const timeProcessed = 1730769907313;
+    let latestProcess = -1;
+    const cheat = (async () => {
+        let i = document.createElement('iframe');
+        document.body.append(i);
+        window.alert = i.contentWindow.alert.bind(window);
+        i.remove();
+        if (!window.location.href.includes("play.blooket.com")) (alert("This cheat only works on play.blooket.com, opening a new tab."), window.open("https://play.blooket.com/"));
+        else {
+            const gameId = ["60101da869e8c70013913b59", "625db660c6842334835cb4c6", "60268f8861bd520016eae038", "611e6c804abdf900668699e3", "60ba5ff6077eb600221b7145", "642467af9b704783215c1f1b", "605bd360e35779001bf57c5e", "6234cc7add097ff1c9cff3bd", "600b1491d42a140004d5215a", "5db75fa3f1fa190017b61c0c", "5fac96fe2ca0da00042b018f", "600b14d8d42a140004d52165", "5f88953cdb209e00046522c7", "600b153ad42a140004d52172", "5fe260e72a505b00040e2a11", "5fe3d085a529560004cd3076", "5f5fc017aee59500041a1456", "608b0a5863c4f2001eed43f4", "5fad491512c8620004918ace", "5fc91a9b4ea2e200046bd49a", "5c5d06a7deebc70017245da7", "5ff767051b68750004a6fd21", "5fdcacc85d465a0004b021b9", "5fb7eea20bd44300045ba495"][Math.floor(Math.random() * 24)];
+            const rand = (l, h) => Math.floor(Math.random() * (h - l + 1)) + l;
+            const { t } = await fetch("https://play.blooket.com/api/playersessions/solo", {
+                body: JSON.stringify({ gameMode: "Factory", questionSetId: gameId }),
+                method: "POST",
+                credentials: "include"
+            }).then(x => x.json()).catch(() => alert('There was an error creating a solo game.'));
+            await fetch("https://play.blooket.com/api/playersessions/landings", {
+                body: JSON.stringify({ t }),
+                method: "POST",
+                credentials: "include"
+            }).catch(() => alert('There was an error when landing.'))
+            await fetch("https://play.blooket.com/api/playersessions/questions?t=" + t, { credentials: "include" });
+            await fetch("https://play.blooket.com/api/gamequestionsets?gameId=" + gameId, { credentials: "include" });
+            await fetch("https://play.blooket.com/api/users/factorystats", {
+                body: JSON.stringify({ t, place: 1, cash: rand(10000000, 100000000), playersDefeated: 0, correctAnswers: rand(500, 2000), upgrades: rand(250, 750), blookUsed: "Chick", nameUsed: "You", mode: "Time-Solo" }),
+                method: "PUT",
+                credentials: "include"
+            }).catch(() => alert('There was an error when spoofing stats.'));
+            await fetch("https://play.blooket.com/api/users/add-rewards", {
+                body: JSON.stringify({ t, addedTokens: 500, addedXp: 300 }),
+                method: "PUT",
+                credentials: "include"
+            }).then(x => x.json())
+                .then(({ dailyReward }) => alert(`Added max tokens and xp, and got ${dailyReward} daily wheel tokens!`))
+                .catch(() => alert('There was an error when adding rewards.'));
+        }
+    });
+    let img = new Image;
+    img.src = "https://raw.githubusercontent.com/Blooket-Council/Blooket-Cheats/main/autoupdate/timestamps/global/getDailyRewards.png?" + Date.now();
+    img.crossOrigin = "Anonymous";
+    img.onload = function() {
+        const c = document.createElement("canvas");
+        const ctx = c.getContext("2d");
+        ctx.drawImage(img, 0, 0, this.width, this.height);
+        let { data } = ctx.getImageData(0, 0, this.width, this.height), decode = "", last;
+        let i = 0;
+        while (i < data.length) {
+            let char = String.fromCharCode(data[i % 4 == 3 ? (i++, i++) : i++] + data[i % 4 == 3 ? (i++, i++) : i++] * 256);
+            decode += char;
+            if (char == "/" && last == "*") break;
+            last = char;
+        }
+        let _, time = timeProcessed, error = "There was an error checking for script updates. Run cheat anyway?";
+        try {
+            [_, time, error] = decode.match(/LastUpdated: (.+?); ErrorMessage: "((.|\n)+?)"/);
+        } catch (e) {}
+        if ((latestProcess = parseInt(time)) <= timeProcessed || iframe.contentWindow.confirm(error)) cheat();
+    }
+    img.onerror = img.onabort = () => {
+        img.onerror = img.onabort = null;
+        cheat();
+        let iframe = document.querySelector("iframe");
+        iframe.contentWindow.alert("It seems the GitHub is either blocked or down.\n\nIf it's NOT blocked, join the Discord server for updates\nhttps://discord.gg/jHjGrrdXP6\n(The cheat will still run after this alert)")
+    }
+})();
+
+
+        </textarea>
+        <br>
+        <button onclick="copyCode('code1', 'confirm1')">📋 Copy</button>
+        <div id="confirm1" class="confirmation">✅ Copied!</div>
+    </div>
+
+    <div class="code-block">
+        <textarea id="code2">
+            /**
+ * @license AGPL-3.0
+ * Blooket Cheats
+ * Copyright (C) 2023-present 05Konz
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Source: https://github.com/Blooket-Council/Blooket-Cheats 05konz994@gmail.com
+*/
+
+/* THE UPDATE CHECKER IS ADDED DURING COMMIT PREP, THERE MAY BE REDUNDANT CODE, DO NOT TOUCH */
+
+(() => {
+    let iframe = document.querySelector("iframe");
+    if (!iframe) {
+        iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        document.body.append(iframe);
+    }
+    /* By CryptoDude3 */
+    if (window.fetch.call.toString() == 'function call() { [native code] }') {
+        const call = window.fetch.call;
+        window.fetch.call = function () {
+            if (!arguments[1].includes("s.blooket.com/rc")) return call.apply(this, arguments);
+        }
+    }
+    const timeProcessed = 1731294333862;
+    let latestProcess = -1;
+    const cheat = (async () => {
+        let i = document.createElement("iframe");
+        document.body.append(i);
+        window.alert = i.contentWindow.alert.bind(window);
+        window.prompt = i.contentWindow.prompt.bind(window);
+        window.confirm = i.contentWindow.confirm.bind(window);
+        i.remove();
+        
+        if (window.location.pathname.startsWith("/market"))
+            (async () => {
+                const { stateNode } = Object.values(
+                    (function react(r = document.querySelector("body>div")) {
+                        return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div"));
+                    })()
+                )[1].children[0]._owner;
+                const prices = Array.prototype.reduce.call(
+                    document.querySelectorAll("[class*='packsWrapper'] > div"),
+                    (a, b) => {
+                        b.querySelector("[class*='blookContainer'] > img") || (a[b.querySelector("[class*='packImgContainer'] > img").alt] = parseInt(b.querySelector("[class*='packBottom']").textContent));
+                        return a;
+                    },
+                    {}
+                );
+                const box = prompt('Which box do you want to open? (ex: "Ice Monster")')
+                    .split(" ")
+                    .map((str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase())
+                    .join(" ");
+                const cost = prices[box];
+                if (!cost) return alert("I couldn't find that box!");
+        
+                const canOpen = Math.floor(stateNode.state.tokens / cost);
+                if (canOpen <= 0) return alert("You do not have enough tokens!");
+                const amount = Math.min(canOpen, parseInt(prompt("How many boxes do you want to open?")) || 0);
+        
+                const alertBlooks = confirm("Would you like to show blooks as unlocking?"),
+                    blooks = {},
+                    now = Date.now();
+        
+                for (let i = 0; i < amount; i++) {
+                    await stateNode.buyPack(true, box);
+        
+                    blooks[stateNode.state.unlockedBlook] ||= 0;
+                    blooks[stateNode.state.unlockedBlook]++;
+        
+                    stateNode.startOpening();
+                    clearTimeout(stateNode.openTimeout);
+                    const rarity = stateNode.state.purchasedBlookRarity;
+        
+                    stateNode.setState({ canOpen: true, currentPack: "", opening: alertBlooks, doneOpening: alertBlooks, openPack: alertBlooks });
+                    clearTimeout(stateNode.canOpenTimeout);
+                    if (rarity == "Chroma") break;
+                }
+                await new Promise((r) => setTimeout(r));
+                alert(
+                    `(${Date.now() - now}ms) Results:\n${Object.entries(blooks)
+                        .map(([blook, amount]) => `    ${blook} ${amount}`)
+                        .join(`\n`)}`
+                );
+            })();
+        else alert("This can only be ran in the Market page.");
+        
+    });
+    let img = new Image;
+    img.src = "https://raw.githubusercontent.com/Blooket-Council/Blooket-Cheats/main/autoupdate/timestamps/global/spamBuyBlooks.png?" + Date.now();
+    img.crossOrigin = "Anonymous";
+    img.onload = function() {
+        const c = document.createElement("canvas");
+        const ctx = c.getContext("2d");
+        ctx.drawImage(img, 0, 0, this.width, this.height);
+        let { data } = ctx.getImageData(0, 0, this.width, this.height), decode = "", last;
+        let i = 0;
+        while (i < data.length) {
+            let char = String.fromCharCode(data[i % 4 == 3 ? (i++, i++) : i++] + data[i % 4 == 3 ? (i++, i++) : i++] * 256);
+            decode += char;
+            if (char == "/" && last == "*") break;
+            last = char;
+        }
+        let _, time = timeProcessed, error = "There was an error checking for script updates. Run cheat anyway?";
+        try {
+            [_, time, error] = decode.match(/LastUpdated: (.+?); ErrorMessage: "((.|\n)+?)"/);
+        } catch (e) {}
+        if ((latestProcess = parseInt(time)) <= timeProcessed || iframe.contentWindow.confirm(error)) cheat();
+    }
+    img.onerror = img.onabort = () => {
+        img.onerror = img.onabort = null;
+        cheat();
+        let iframe = document.querySelector("iframe");
+        iframe.contentWindow.alert("It seems the GitHub is either blocked or down.\n\nIf it's NOT blocked, join the Discord server for updates\nhttps://discord.gg/jHjGrrdXP6\n(The cheat will still run after this alert)")
+    }
+})();
+        
+        </textarea>
+        <br>
+        <button onclick="copyCode('code2', 'confirm2')">📋 Copy</button>
+        <div id="confirm2" class="confirmation">✅ Copied!</div>
+    </div>
+
+    <div class="code-block">
+        <textarea id="code3">
+            /**
+ * @license AGPL-3.0
+ * Blooket Cheats
+ * Copyright (C) 2023-present 05Konz
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Source: https://github.com/Blooket-Council/Blooket-Cheats 05konz994@gmail.com
+*/
+
+/* THE UPDATE CHECKER IS ADDED DURING COMMIT PREP, THERE MAY BE REDUNDANT CODE, DO NOT TOUCH */
+
+(() => {
+    let iframe = document.querySelector("iframe");
+    if (!iframe) {
+        iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        document.body.append(iframe);
+    }
+    /* By CryptoDude3 */
+    if (window.fetch.call.toString() == 'function call() { [native code] }') {
+        const call = window.fetch.call;
+        window.fetch.call = function () {
+            if (!arguments[1].includes("s.blooket.com/rc")) return call.apply(this, arguments);
+        }
+    }
+    const timeProcessed = 1730769908245;
+    let latestProcess = -1;
+    const cheat = (async () => {
+        let i = document.createElement('iframe');
+        document.body.append(i);
+        window.alert = i.contentWindow.alert.bind(window);
+        i.remove();
+        let blooks;
+        const { stateNode } = Object.values((function react(r = document.querySelector("body>div")) { return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div")) })())[1].children[0]._owner;
+        const lobby = window.location.pathname.startsWith("/play/lobby"),
+            dashboard = !lobby && window.location.pathname.startsWith("/blooks");
+        if (dashboard || lobby) {
+            let blooks, key = lobby ? "keys" : "entries";
+            const old = Object[key];
+            Object[key] = function (obj) {
+                if (!obj.Chick) return old.call(this, obj);
+                blooks = obj;
+                return (Object[key] = old).call(this, obj);
+            };
+            stateNode.render();
+            if (lobby) stateNode.setState({ unlocks: Object.keys(blooks) });
+            else stateNode.setState({ blookData: Object.keys(blooks).reduce((a, b) => (a[b] = (stateNode.state.blookData[b] || 1), a), {}), allSets: Object.values(blooks).reduce((a, b) => (b.set && a.includes(b.set) ? a : a.concat(b.set)), []) });
+        } else alert("This only works in lobbies or the dashboard blooks page.");
+    });
+    let img = new Image;
+    img.src = "https://raw.githubusercontent.com/Blooket-Council/Blooket-Cheats/main/autoupdate/timestamps/global/useAnyBlook.png?" + Date.now();
+    img.crossOrigin = "Anonymous";
+    img.onload = function() {
+        const c = document.createElement("canvas");
+        const ctx = c.getContext("2d");
+        ctx.drawImage(img, 0, 0, this.width, this.height);
+        let { data } = ctx.getImageData(0, 0, this.width, this.height), decode = "", last;
+        let i = 0;
+        while (i < data.length) {
+            let char = String.fromCharCode(data[i % 4 == 3 ? (i++, i++) : i++] + data[i % 4 == 3 ? (i++, i++) : i++] * 256);
+            decode += char;
+            if (char == "/" && last == "*") break;
+            last = char;
+        }
+        let _, time = timeProcessed, error = "There was an error checking for script updates. Run cheat anyway?";
+        try {
+            [_, time, error] = decode.match(/LastUpdated: (.+?); ErrorMessage: "((.|\n)+?)"/);
+        } catch (e) {}
+        if ((latestProcess = parseInt(time)) <= timeProcessed || iframe.contentWindow.confirm(error)) cheat();
+    }
+    img.onerror = img.onabort = () => {
+        img.onerror = img.onabort = null;
+        cheat();
+        let iframe = document.querySelector("iframe");
+        iframe.contentWindow.alert("It seems the GitHub is either blocked or down.\n\nIf it's NOT blocked, join the Discord server for updates\nhttps://discord.gg/jHjGrrdXP6\n(The cheat will still run after this alert)")
+    }
+})();
+
+        </textarea>
+        <br>
+        <button onclick="copyCode('code3', 'confirm3')">📋 Copy</button>
+        <div id="confirm3" class="confirmation">✅ Copied!</div>
+    </div>
+
+    <script>
+        function copyCode(textareaId, confirmId) {
+            const textarea = document.getElementById(textareaId);
+            textarea.select();
+            textarea.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+
+            const confirm = document.getElementById(confirmId);
+            confirm.style.display = "block";
+            confirm.style.opacity = "1";
+
+            setTimeout(() => {
+                confirm.style.opacity = "0";
+                setTimeout(() => {
+                    confirm.style.display = "none";
+                }, 300);
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>

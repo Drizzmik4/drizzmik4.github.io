@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Websites</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-black dark:bg-[#1e1e1e] dark:text-white transition-colors duration-300">
+
+  <!-- 🔝 Navbar -->
+  <nav class="w-full fixed top-0 left-0 z-50 bg-white/80 dark:bg-[#1e1e1e]/90 backdrop-blur-md border-b border-gray-300 dark:border-white/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-semibold text-blue-600 dark:text-cyan-400">Milans Web</div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-sm font-medium hover:underline">Home</a>
+        <a href="special-sounds.html" class="text-sm font-medium hover:underline">Sounds</a>
+        <a href="websites.html" class="text-sm font-medium underline underline-offset-4 font-semibold">Websites</a>
+        <a href="code-copier.html" class="text-sm font-medium hover:underline">Hacks 👿</a>
+        <button id="theme-toggle" style="margin-left: auto; padding: 8px 16px;">
+  Toggle Mode
+</button>
+
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 📄 Main Content -->
+  <main class="pt-24 px-6 max-w-2xl mx-auto text-center">
+    <h1 class="text-4xl font-bold text-cyan-400 mb-4">🌐 Useful Links</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">Handy websites and tools I use</p>
+
+    <div class="flex flex-col gap-5">
+      <a href="index.html" class="rounded-xl px-5 py-4 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 text-blue-600 dark:text-cyan-300 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        🏠 Back to Main Page
+      </a>
+      <a href="https://gitlab.com/blooket/blooket-cheats/-/tree/main/cheats?ref_type=heads" target="_blank" class="rounded-xl px-5 py-4 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 text-blue-600 dark:text-cyan-300 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        🧪 Blooket Cheats
+      </a>
+      <a href="https://www.youtube.com/watch?v=HGTJBPNC-Gw" target="_blank" class="rounded-xl px-5 py-4 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 text-blue-600 dark:text-cyan-300 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        📺 YT: Learn HTML & CSS
+      </a>
+      <a href="https://gizmo.ai/streak" target="_blank" class="rounded-xl px-5 py-4 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 text-blue-600 dark:text-cyan-300 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        ⚙️ Gizmo Streak Tool
+      </a>
+    </div>
+  </main>
+
+  <!-- 🔄 Dark Mode Script -->
+  <script>
+  // On load: check and apply theme from localStorage
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  // Toggle theme on button click
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milans Web</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html,
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black dark:bg-[#1e1e1e] dark:text-white transition-colors duration-300">
+
+  <!-- 🌐 Navigation Bar -->
+  <nav class="w-full fixed top-0 left-0 z-50 bg-white/80 dark:bg-[#1e1e1e]/90 backdrop-blur-md border-b border-gray-300 dark:border-white/10 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-semibold text-blue-600 dark:text-cyan-400">Milans Web</div>
+      <div class="flex items-center gap-4">
+        <a href="shrok.html" class="text-sm font-medium hover:underline">SHROK</a>
+        <a href="special-sounds.html" class="text-sm font-medium hover:underline">RAVE</a>
+        <a href="websites.html" class="text-sm font-medium hover:underline">Websites</a>
+        <a href="code-copier.html" class="text-sm font-medium hover:underline">blooket Hacks👿</a>
+        <a href="games.html" class="text-sm font-medium hover:underline">Game</a>
+        <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-sm px-3 py-1 rounded hover:ring-2 hover:ring-blue-400 transition">
+          Toggle Mode
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- ⬇ Content starts below nav -->
+  <main class="pt-24 px-4 flex flex-col items-center">
+
+    <h1 class="text-4xl font-bold text-cyan-400 mb-4">Milans Web</h1>
+
+    <p class="text-center max-w-xl mb-8 text-gray-700 dark:text-gray-300">
+     Hello, My name is Milan and I am an expert at coding. I made all of these links by myself and with no help at all.
+     please admire my collection of hacks, scripts and games.
+      <br />
+    
+    </p>
+
+    <div class="flex flex-col gap-4 w-full max-w-xs">
+      <a href="shrok.html" class="rounded-xl px-4 py-3 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        SHROK
+      </a>
+      <a href="special-sounds.html" class="rounded-xl px-4 py-3 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        RAVE
+      </a>
+      <a href="websites.html" class="rounded-xl px-4 py-3 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        Websites
+      </a>
+      <a href="code-copier.html" class="rounded-xl px-4 py-3 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        Blooket Hacks👿
+      </a>
+      <a href="weather.html" class="rounded-xl px-4 py-3 text-center font-semibold bg-white dark:bg-[#2a2a2a] border border-blue-300 dark:border-cyan-400 shadow hover:shadow-md hover:ring-2 hover:ring-blue-400 transition">
+        Weather
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+  // On load: check and apply theme from localStorage
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  // Toggle theme on button click
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
