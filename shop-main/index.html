@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milans 3D Prints</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Milans 3D Prints</h1>
+    <p>
+      Hi, I'm Milan. I design and 3D print toys and gadgets. If you like any of the featured items, please order through the Google Form. Custom requests are welcome!
+    </p>
+    
+    <a href="https://forms.gle/kdrfDoeyAtpfPkHw8" class="order-button" target="_blank" rel="noopener noreferrer">ORDER HERE</a>
+    
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="https://forms.gle/kdrfDoeyAtpfPkHw8">Order Form</a>
+      <a href="delivery.html">Delivery Info</a>
+    </nav>
+  </header>
+  <main>
+    <section id="products">
+      <h2 style="text-align:center; color:#2d4059;">Featured Products</h2>
+      <div class="products">
+        <div class="product" onclick="openGallery(0)">
+          <img src="images/flexi.webp" alt="flexi dino">
+          <div class="gallery-indicator">+3 images</div>
+          <h3>flexi dino</h3>
+          <p>a flexi dino that can twist and tur. great for kids.</p>
+          <div class="price">€7</div>
+        </div>
+        <div class="product" onclick="openGallery(1)">
+          <img src="images/keychain.webp" alt="keychain phone stand">
+          <div class="gallery-indicator">+2 images</div>
+          <h3>keychain phone stand</h3>
+          <p>a phone stand for your keychain.</p>
+          <div class="price">€5</div>
+        </div>
+        <div class="product" onclick="openGallery(2)">
+          <img src="images/kraken.webp" alt="kraken phone stand">
+          <div class="gallery-indicator">+2 images</div>
+          <h3>kraken phone stand</h3>
+          <p>A nice, stylish and unique phone stand.</p>
+          <div class="price">€10</div>
+        </div>
+        <div class="product" onclick="openGallery(3)">
+          <img src="images/music.webp" alt="3D Printed Key Holder">
+          <h3>Viral Tiktok music box</h3>
+          <p>Never lose your keys again! Modern design, easy to mount.</p>
+          <div class="price">$10</div>
+        </div>
+        <div class="product" onclick="openGallery(4)">
+            <img src="images/car.JPG" alt="keychain">
+            <h3>Personalized keychain!</h3>
+            <p>your own personalized keychain with your name on it!</p>
+            <div class="price">$5</div>
+          
+        </div>
+      </div>
+    </section>
+    <section id="payment" class="contact">
+      <h2>Payment Information</h2>
+      <p>For your convenience and security, I exclusively accept payments through Revolut.</p>
+      <p>🔒 Safe, fast, and reliable transactions</p>
+    </section>
+    <section id="contact" class="contact">
+      <h2>Contact & Orders</h2>
+      <p>Have a custom idea or want to place an order? Reach out! Dont email me to place an order,use the google form instead.</p>
+      <p>
+        <a href="mailto:milan.halapi1@gmail.com">Email</a>
+        <a href="https://forms.gle/kdrfDoeyAtpfPkHw8">ORDER HERE</a>
+        
+      </p>
+    </section>
+  </main>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeGallery()">&times;</span>
+    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+    <button class="next" onclick="changeImage(1)">&#10095;</button>
+    <div class="modal-content">
+        <img id="modalImage" src="" alt="Gallery Image">
+    </div>
+  </div>
+
+  <script>
+    const productGalleries = [
+        ['images/flexi.webp', 'images/flexi2.webp', 'images/flexi3.webp', 'images/flexi4.webp'],
+        ['images/keychain.webp', 'images/keychain2.webp', 'images/keychain3.webp'],
+        ['images/kraken.webp', 'images/kraken2.webp', 'images/kraken3.webp'],
+        ['images/music.webp', 'images/music2.webp', 'images/music3.webp'],
+        ['images/car.JPG', 'images/car2.JPG', 'images/car3.JPG']
+    ];
+
+    let currentGallery = [];
+    let currentImageIndex = 0;
+
+    function openGallery(productIndex) {
+        currentGallery = productGalleries[productIndex];
+        currentImageIndex = 0;
+        document.getElementById('modalImage').src = currentGallery[0];
+        document.getElementById('imageModal').style.display = 'flex';
+    }
+
+    function closeGallery() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    function changeImage(direction) {
+        currentImageIndex += direction;
+        if (currentImageIndex >= currentGallery.length) currentImageIndex = 0;
+        if (currentImageIndex < 0) currentImageIndex = currentGallery.length - 1;
+        document.getElementById('modalImage').src = currentGallery[currentImageIndex];
+    }
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (document.getElementById('imageModal').style.display === 'flex') {
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+            if (e.key === 'Escape') closeGallery();
+        }
+    });
+  </script>
+</body>
+</html>
